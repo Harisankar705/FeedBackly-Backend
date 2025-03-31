@@ -2,10 +2,16 @@ import { Request, Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken'
 import dotenv from 'dotenv'
 import bcrypt from 'bcryptjs';
+import { STATUS_CODES } from '../utils/statusCodes';
 dotenv.config()
 export const adminLogin=async(req:Request,res:Response,next:NextFunction)=>{
     try {
         const {email,password}=req.body
+        if(!email ||!password)
+        {
+            res.status(STATUS_CODES.FORBIDDEN).json({message:"Credentials not provided!"})
+            return
+        }
         console.log(req.body)
         const isEmailValid=email===process.env.ADMIN_EMAIL
         console.log("isEmailValid",isEmailValid)
