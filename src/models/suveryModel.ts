@@ -7,7 +7,7 @@ const surveySchema=new Schema<ISurvey>({
     },
     gender:{
         type:String,
-        enum:['Male','Female','Others'],
+        enum:['Male','Female','Others',"Non-binary","Prefer-not-to-say"],
         required:true
     },
     phonenumber:{
@@ -29,6 +29,10 @@ const surveySchema=new Schema<ISurvey>({
     message:{
         type:String,
         required:true
+    },
+    createdAt:{
+        type:Date,
+        default:Date.now
     }
 
 })

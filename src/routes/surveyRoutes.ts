@@ -1,4 +1,4 @@
-import { verifyToken } from './../middleware/verifyToken';
+import { verifyToken } from '../middleware/verifyToken';
 import { SurveyRepository } from '../repositories/surveyRepository';
 import express from 'express'
 import { SurveyService } from '../services/surveyService'

@@ -1,12 +1,13 @@
-import { NextFunction } from 'express';
+import { NextFunction, Request, Response } from 'express';
 export interface ISurvey{
     name:string,
-    gender:'Male'|'Female'|'Others'
+    gender:'Male'|'Female'|'Others'|"Non-binary"|"Prefer-not-to-say",
     phonenumber:number,
     nationality:string,
     address:string,
     message:string,
     email:string
+    createdAt?:string
 
 }
 export interface CustomError extends Error{
